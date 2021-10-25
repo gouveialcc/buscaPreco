@@ -38,13 +38,13 @@ def request():
 
     # CONVERTE O VALOR RETORNADO DA VARIÁVEL DO PRECO ACIMA
     v2ml_value = float(v2ml)
-    print(f'>>> DESCRIÇÃO DO PRODUTO: {v1ml}')
-    print(f'>>> PREÇO: R${v2ml_value}')
+    print(f'>>> DESCRIÇÃO DO PRODUTO: {v1ml}.')
+    print(f'>>> PREÇO: R${v2ml_value}.')
 
 # FUNCAO ENVIA MENSAGEM WHATSAPP
 def envMensagem():
     global contatos, x
-    msgPrcAlcancado = (f"PREÇO ALCANÇADO PARA O PRODUTO {v1ml}, ESTÁ NO VALOR DE R${v2ml_value}")
+    msgPrcAlcancado = (f"PREÇO ALCANÇADO PARA O PRODUTO: {v1ml}. AGORA ESTÁ NO VALOR DE R${v2ml_value}.")
     contatos = ['+5591991440764', '+5591991656408', '+5591980545716']
     x = 0
 
@@ -66,5 +66,7 @@ else:
 
 # REPETE O REQUEST ATÉ ALCANCAR O PRECO DESEJADO
 while prcDsj > v2ml_value:
+    print(f'>>> PREÇO NÃO ALCANÇADO PARA O PRODUTO: {v1ml}.')
+    print('>>> NOVO REQUEST SERÁ FEITO EM INSTANTES.')
     time.sleep(5)
     request()
