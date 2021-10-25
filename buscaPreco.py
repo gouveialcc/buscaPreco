@@ -48,8 +48,8 @@ def envMensagem():
     x = 0
 
     while x <= 2:
-        pywhatkit.sendwhatmsg(contatos[x], msgPrcAlcancado, datetime.now().hour, datetime.now().minute + 2)
-        time.sleep(60)
+        pywhatkit.sendwhatmsg(contatos[x], msgPrcAlcancado, datetime.now().hour, datetime.now().minute + 2, wait_time=10)
+        time.sleep(30)
         keyboard.press_and_release('ctrl + w')
         x = x+1
 
