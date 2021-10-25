@@ -22,7 +22,7 @@ locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
 
 # VARIÁVEIS GLOBAIS
 url = 'https://www.mercadolivre.com.br/microsoft-xbox-one-s-1tb-standard-cor-branco/p/MLB14114827#reco_item_pos=1&reco_backend=machinalis-v2p-pdp-boost-v2&reco_backend_type=low_level&reco_client=vip-v2p&reco_id=6547dfe3-a60a-42a0-9c13-94f9b5a07f58'
-prcDesejado = 2.520
+prcDesejado = 2.900
 
 # FUNCAO REQUEST E SOUP SITE MERCADO LIVRE
 def request():
@@ -56,9 +56,15 @@ def envMensagem():
 # EXECUTA A FUNCAO DE PESQUISA WEB SCRAPING
 request()
 
-# CONDICAO MERCADO LIVRE (PREÇO ALCANÇADO)
+# CONDICAO (PREÇO ALCANÇADO)
 if(prcDesejado <= v2ml_value):
     print(f'>>> PREÇO ALCANÇADO PARA O PRODUTO {v1ml}, ESTÁ NO VALOR DE R${v2ml_value}')
     envMensagem()
 else:
     print(f'>>> PREÇO NÃO ALCANÇADO! O VALOR ATUAL É DE R${v2ml_value}')
+
+# REPETE O REQUEST ATÉ ALCANCAR O PRECO DESEJADO
+while prcDesejado > v2ml_value:
+    print(f'>>> PREÇO NÃO ALCANÇADO! O VALOR ATUAL É DE R${v2ml_value}')
+    time.sleep(5)
+    request()
