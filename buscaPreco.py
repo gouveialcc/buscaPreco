@@ -57,7 +57,7 @@ def envMensagem():
 request()
 
 # CONDIÇÃO (PREÇO ALCANÇADO)
-if(prcDsj <= valPrdtCnv):
+if(valPrdtCnv <= prcDsj):
     print(f'>>> PREÇO ALCANÇADO PARA O PRODUTO: {dscPrdt}, ESTÁ NO VALOR DE R${valPrdtCnv}.')
     envMensagem()
 else:
