@@ -64,7 +64,7 @@ else:
     print(f'>>> PREÇO NÃO ALCANÇADO! O VALOR ATUAL É R${valPrdtCnv}.')
 
 # REPETE O REQUEST ATÉ ALCANCAR O PREÇO DESEJADO
-while prcDsj > valPrdtCnv:
+while valPrdtCnv > prcDsj:
     print(f'>>> PREÇO NÃO ALCANÇADO PARA O PRODUTO: {dscPrdt}.')
     print('>>> NOVO REQUEST SERÁ REALIZADO.')
     time.sleep(5)
